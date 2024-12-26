@@ -6,18 +6,19 @@ const ThemeContext = createContext()
 const ThemeProvider = ({ children }) => {
   const [themeName, setThemeName] = useState('light')
 
+  // 테마변경 비활성화: 화이트로 고정
   useEffect(() => {
-    const darkMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    setThemeName(darkMediaQuery.matches ? 'dark' : 'light')
-    darkMediaQuery.addEventListener('change', (e) => {
-      setThemeName(e.matches ? 'dark' : 'light')
-    });
+    // const darkMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    // setThemeName(darkMediaQuery.matches ? 'dark' : 'light')
+    // darkMediaQuery.addEventListener('change', (e) => {
+    //   setThemeName(e.matches ? 'dark' : 'light')
+    // });
   }, [])
 
   const toggleTheme = () => {
-    const name = themeName === 'dark' ? 'light' : 'dark'
-    localStorage.setItem('themeName', name)
-    setThemeName(name)
+    // const name = themeName === 'dark' ? 'light' : 'dark'
+    // localStorage.setItem('themeName', name)
+    // setThemeName(name)
   }
 
   return (

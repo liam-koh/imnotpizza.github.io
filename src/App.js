@@ -17,9 +17,13 @@ const App = () => {
       <Header />
 
       <main>
+        {/* 소개 */}
         <About />
+        {/* 프로젝트 */}
         <Projects />
+        {/* 기술스택 */}
         <Skills />
+        {/* 사이드 프로젝트 */}
         <Contact />
       </main>
 
