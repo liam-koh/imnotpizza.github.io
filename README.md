@@ -1,50 +1,68 @@
-# React + TypeScript + Vite
+# Cleanfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Cleanfolio is a portfolio template built with React. However, if you prefer a template built with HTML, CSS, and JavaScript, you can check out [Cleanfolio Minimal](https://github.com/rjshkhr/cleanfolio-minimal).
 
-Currently, two official plugins are available:
+## Preview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[![Imgur](https://imgur.com/FwDMNEM.gif)](https://rjshkhr.github.io/cleanfolio)
 
-## Expanding the ESLint configuration
+[Live Demo](https://rjshkhr.github.io/cleanfolio)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Instructions
 
-- Configure the top-level `parserOptions` property like this:
+### Setup
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```shell
+git clone https://github.com/rjshkhr/cleanfolio
+cd cleanfolio
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+If you use [nvm](https://github.com/nvm-sh/nvm) or [fnm](https://github.com/Schniz/fnm), execute:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```shell
+nvm install
+nvm use
 ```
+
+Or:
+
+```shell
+fnm install
+fnm use
+```
+
+To install and launch the project, run these commands:
+
+```shell
+yarn
+yarn start
+```
+
+### How to Use
+
+- Open the `public/index.html` file and replace:
+
+`<title>John Smith</title>` with `<title>Your Name</title>`.
+
+- Open the `src/portfolio.js` file and make the necessary changes.
+
+### Deployment
+
+- In the `package.json` file, update:
+
+`"homepage": "https://rjshkhr.github.io/cleanfolio"`
+
+to `"homepage": "https://yourusername.github.io"`.
+
+- Push the changes to your repository.
+
+- To build and deploy, run the following commands:
+
+```shell
+yarn build
+yarn deploy
+```
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
