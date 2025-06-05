@@ -10,6 +10,7 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [react(), tsconfigPaths(), svgr({})],
     assetsInclude: ['**/*.svg', '**/*.png'],
+    base: env.VITE_BASE_URL || '/',
     server: {
       // port 설정
       port: 5678,
