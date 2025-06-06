@@ -40,7 +40,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 w-full bg-white/90 backdrop-blur-sm border-b border-gray-200 z-50 transition-transform duration-300 ${showHeader ? 'translate-y-0' : '-translate-y-full'}`}
+      className={`fixed top-0 w-screen bg-white/90 backdrop-blur-sm border-b border-gray-200 z-50 transition-transform duration-300 ${showHeader ? 'translate-y-0' : '-translate-y-full'}`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
@@ -67,7 +67,7 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden py-4 border-t border-gray-200">
+          <nav className="md:hidden py-4">
             {navItems.map((item) => (
               <button
                 key={item.name}
