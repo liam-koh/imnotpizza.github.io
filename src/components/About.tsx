@@ -26,7 +26,7 @@ export default function About() {
 
           {/* 주요 문구 */}
           <div className="space-y-6">
-            <div className="space-y-4 text-gray-700 leading-relaxed text-xl">
+            <div className="space-y-4 text-gray-700 leading-relaxed lg:text-xl sm:text-lg">
               <AnimatedSection animation="fade-right" delay={0}>
                 <p>
                   1.

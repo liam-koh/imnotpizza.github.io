@@ -181,8 +181,11 @@ export default {
         desktop: '80em',
       },
       screens: {
-        mobile: '20.5em',
-        desktop: '80em',
+        sm: '768px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px',
+        '2xl': '1536px',
       },
       borderRadius: {
         lg: 'var(--radius)',
