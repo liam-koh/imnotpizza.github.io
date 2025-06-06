@@ -1,6 +1,7 @@
-import { Github, Linkedin, Mail, Download } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import AnimatedSection from "./AnimatedSection"
+import { Github, Linkedin, Mail, Download } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import AnimatedSection from './AnimatedSection';
+import Profile from './Profile';
 
 export default function Hero() {
   return (
@@ -9,21 +10,20 @@ export default function Hero() {
       className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 pt-16"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-3xl mx-auto flex flex-col gap-10">
+          <Profile/>
           <AnimatedSection animation="fade-down" delay={200}>
             <h1 className="text-4xl sm:text-6xl font-bold text-gray-900 mb-6">
-              Hi, I'm <span className="text-blue-600">Alex Johnson</span>
+              <span className="text-blue-600">고보빈</span>
+            </h1>
+            <h1 className="text-2xl sm:text-5xl font-bold text-gray-900 mb-6">
+              본질에 집중하여 회사의 성장에 기여하는 개발자입니다
             </h1>
           </AnimatedSection>
 
           <AnimatedSection animation="fade-up" delay={400}>
-            <p className="text-xl sm:text-2xl text-gray-600 mb-8">Frontend Developer & UI/UX Enthusiast</p>
-          </AnimatedSection>
-
-          <AnimatedSection animation="fade-up" delay={600}>
-            <p className="text-lg text-gray-700 mb-12 max-w-2xl mx-auto">
-              I create beautiful, responsive web applications with modern technologies. Passionate about clean code,
-              user experience, and bringing ideas to life.
+            <p className="text-xl sm:text-2xl text-gray-600 mb-8">
+              Frontend Developer & FE Team Leader
             </p>
           </AnimatedSection>
 
@@ -75,5 +75,5 @@ export default function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }
