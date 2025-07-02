@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Github, Linkedin, Mail, Download } from 'lucide-react';
+import { Github, Mail, Globe, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import AnimatedSection from './AnimatedSection';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -13,6 +13,33 @@ export default function Hero() {
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  const contactLinks = [
+    {
+      icon: <Github size={24} />,
+      href: 'https://github.com/imnotpizza',
+      label: 'GitHub',
+      target: '_blank',
+    },
+    {
+      icon: <Mail size={24} />,
+      href: 'mailto:bobin6972@gmail.com',
+      label: 'Email',
+      target: undefined,
+    },
+    {
+      icon: <Globe size={24} />,
+      href: 'https://velog.io/@imnotpizza/posts',
+      label: 'Blog',
+      target: '_blank',
+    },
+    {
+      icon: <Phone size={24} />,
+      href: 'tel:+821026676972',
+      label: 'Phone',
+      target: undefined,
+    },
+  ];
 
   return (
     <section
@@ -33,7 +60,7 @@ export default function Hero() {
               // Desktop: Rectangle image
               <div className="relative overflow-hidden rounded-2xl shadow-xl transform hover:scale-105 transition-transform duration-500">
                 <img
-                  src="https://placehold.co/400x400"
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-MbTBIrkoB6yGi4f1slktzrPNV3LxsL.png"
                   alt="Profile"
                   className="w-full h-auto object-cover"
                 />
@@ -42,7 +69,7 @@ export default function Hero() {
               // Mobile: Circular image
               <div className="flex justify-center">
                 <img
-                  src="https://placehold.co/400x400"
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-MbTBIrkoB6yGi4f1slktzrPNV3LxsL.png"
                   alt="Profile"
                   className="sm:w-[20rem] sm:h-[20rem] w-[20rem] h-[20rem] mx-auto p-6 bg-white shadow-lg rounded-full object-cover"
                 />
@@ -65,27 +92,27 @@ export default function Hero() {
             </p>
 
             <p className="text-lg text-gray-700 mb-12 max-w-2xl mx-auto">
-              이러쿵저러쿵이직준비중이러쿵저러쿵이직준비중이러쿵저러쿵이직준비중이러쿵저러쿵이직준비중이러쿵저러쿵이직준비중
+              반복적이고 불필요한 작업을 최소화하는 대신, 서비스에 진정으로
+              필요한 일에 집중하는 것과 그 과정을 좋아하는 프론트엔드
+              개발자입니다.
             </p>
+
+            {/* Contact Links */}
             <div
-              className={`flex ${mounted && !isMobile ? 'justify-start' : 'justify-center'} space-x-6`}
+              className={`flex ${mounted && !isMobile ? 'justify-start' : 'justify-center'} gap-6 mb-8`}
             >
-              <a
-                href="https://github.com/imnotpizza"
-                className="text-gray-600 hover:text-blue-600 transition-all duration-200 transform hover:scale-110"
-                aria-label="GitHub"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Github size={24} />
-              </a>
-              <a
-                href="mailto:bobin6972@gmail.com"
-                className="text-gray-600 hover:text-blue-600 transition-all duration-200 transform hover:scale-110"
-                aria-label="Email"
-              >
-                <Mail size={24} />
-              </a>
+              {contactLinks.map((link, index) => (
+                <a
+                  key={index}
+                  href={link.href}
+                  className="text-gray-600 hover:text-blue-600 transition-all duration-200 transform hover:scale-110"
+                  aria-label={link.label}
+                  target={link.target}
+                  rel={link.target ? 'noopener noreferrer' : undefined}
+                >
+                  {link.icon}
+                </a>
+              ))}
             </div>
           </AnimatedSection>
         </div>

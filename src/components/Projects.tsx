@@ -31,8 +31,8 @@ interface Project {
   description: string;
   image: string;
   technologies: string[];
-  liveUrl: string;
-  githubUrl: string;
+  liveUrl?: string;
+  githubUrl?: string;
   details: {
     overview: string;
     features: string[];
@@ -52,260 +52,289 @@ export default function Projects() {
 
   const projects: Project[] = [
     {
-      title: 'E-Commerce Platform',
+      title: '오늘의 배송 Toodee - 배송접수 UI 개선',
       description:
-        'A full-featured e-commerce platform built with React, Next.js, and Stripe integration. Features include product catalog, shopping cart, and secure checkout.',
+        '기존 퀵, 택배접수 UI의 리뉴얼 및 편의 기능 추가, 코드 리팩토링, 최적화를 담당하여 퍼포먼스 30% 향상과 코드 양 18% 감소를 달성했습니다.',
       image: '/placeholder.svg?height=300&width=400',
       technologies: [
         'React',
         'Next.js',
         'TypeScript',
-        'Tailwind CSS',
-        'Stripe',
+        'React Hook Form',
+        'Zod',
+        'React Query',
+        'Vitest',
+        'MSW',
+        'Storybook',
       ],
-      liveUrl: 'https://example.com',
-      githubUrl: 'https://github.com',
+      liveUrl: 'https://toodee.co.kr',
       details: {
         overview:
-          '대규모 전자상거래 플랫폼으로, 사용자 친화적인 인터페이스와 안전한 결제 시스템을 제공합니다. 실시간 재고 관리, 개인화된 추천 시스템, 그리고 관리자 대시보드를 포함한 완전한 솔루션입니다.',
+          '레거시 배송접수 페이지를 현대적인 기술 스택으로 개선하여 사용자 경험과 개발자 경험을 모두 향상시킨 프로젝트입니다. 코드 품질 개선과 성능 최적화에 중점을 두었습니다.',
         features: [
-          '반응형 제품 카탈로그 및 검색 기능',
-          '실시간 장바구니 및 위시리스트',
-          'Stripe 기반 안전한 결제 시스템',
-          '사용자 계정 관리 및 주문 이력',
-          '관리자 대시보드 및 재고 관리',
-          '개인화된 상품 추천 알고리즘',
+          'React Hook Form과 Zod를 활용한 폼 검증 시스템',
+          'React Query를 통한 효율적인 서버 상태 관리',
+          'Vitest와 React Testing Library를 활용한 테스트 환경 구축',
+          'MSW 2.x를 활용한 일관성 있는 모킹 환경',
+          'Web Vitals 지표 개선을 통한 성능 최적화',
+          'Page Router에서 App Router로의 점진적 마이그레이션',
         ],
         challenges: [
-          '대용량 상품 데이터 처리 및 성능 최적화',
-          '복잡한 상태 관리 (장바구니, 사용자 세션, 결제 상태)',
-          '다양한 결제 방식 및 국제화 지원',
-          '실시간 재고 업데이트 및 동시성 처리',
+          '레거시 코드의 복잡한 구조와 기술 부채',
+          '기존 기능을 유지하면서 새로운 기술 스택 도입',
+          '성능 최적화와 코드 품질 개선의 균형',
+          '테스트 커버리지 확보와 안정성 보장',
         ],
         solutions: [
-          'React Query를 활용한 서버 상태 관리 및 캐싱 최적화',
-          'Zustand를 이용한 클라이언트 상태 관리 구조화',
-          'Stripe API 통합 및 웹훅을 통한 결제 상태 동기화',
-          'Redis를 활용한 실시간 재고 관리 시스템 구축',
+          'React Hook Form과 Zod 도입으로 폼 관리 로직 간소화',
+          'React Query를 통한 서버 상태 관리 최적화',
+          'Vitest와 MSW를 활용한 포괄적인 테스트 환경 구축',
+          'Web Vitals 지표 모니터링을 통한 성능 개선',
         ],
-        duration: '6개월',
-        teamSize: '5명 (프론트엔드 2명, 백엔드 2명, 디자이너 1명)',
-        role: '프론트엔드 리드 개발자',
+        duration: '4개월 (2024.10 - 2025.01)',
+        teamSize: '프론트엔드 파트장 (팀 리드)',
+        role: '프론트엔드 개발 리드',
         results: [
-          '페이지 로딩 속도 40% 향상',
-          '사용자 전환율 25% 증가',
-          '모바일 사용성 점수 95점 달성',
-          '월 거래량 1000만원 돌파',
+          '코드 양 18% 감소로 유지보수성 향상',
+          '퍼포먼스 30% 향상으로 사용자 경험 개선',
+          '핵심 로직 테스트 커버리지 100% 달성',
+          'LCP 48% 감소, FCP 60% 감소로 로딩 성능 개선',
         ],
       },
     },
     {
-      title: 'Task Management App',
+      title: 'O2pluss Design System',
       description:
-        'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
+        'O2pluss 내 모든 프로젝트에 범용으로 사용되는 UI 라이브러리를 제작하여 UI 작업공수를 평균 70% 감소시켰습니다.',
       image: '/placeholder.svg?height=300&width=400',
-      technologies: ['React', 'Firebase', 'Material-UI', 'Redux'],
-      liveUrl: 'https://example.com',
-      githubUrl: 'https://github.com',
+      technologies: [
+        'React',
+        'TypeScript',
+        'Vite',
+        'Storybook',
+        'GitHub Actions',
+        'Chromatic',
+        'Rollup',
+      ],
+      githubUrl: 'https://github.com/o2pluss',
       details: {
         overview:
-          '팀 협업을 위한 실시간 태스크 관리 애플리케이션입니다. 직관적인 드래그 앤 드롭 인터페이스와 실시간 동기화 기능을 통해 팀의 생산성을 극대화합니다.',
+          '회사 내 모든 프로젝트에서 일관된 UI/UX를 제공하고 개발 효율성을 높이기 위한 디자인 시스템 라이브러리입니다. 재사용 가능한 컴포넌트와 자동화된 문서화 시스템을 구축했습니다.',
         features: [
-          '실시간 협업 및 동기화',
-          '드래그 앤 드롭 태스크 관리',
-          '팀 멤버 초대 및 권한 관리',
-          '프로젝트 진행률 시각화',
-          '댓글 및 파일 첨부 기능',
-          '알림 및 데드라인 관리',
+          '재사용 가능하고 커스터마이징 가능한 컴포넌트 라이브러리',
+          'Vite를 활용한 다양한 환경(SSR, CJS, ESM) 지원',
+          'Storybook을 통한 컴포넌트 문서화 및 예제 제공',
+          'GitHub Actions를 활용한 자동 배포 파이프라인',
+          'Chromatic을 통한 시각적 회귀 테스트',
+          'AI를 활용한 문서화 자동화',
         ],
         challenges: [
-          '실시간 데이터 동기화 및 충돌 해결',
-          '복잡한 드래그 앤 드롭 UX 구현',
-          '다중 사용자 권한 관리 시스템',
-          '오프라인 모드 지원',
+          '다양한 프로젝트 환경에서 호환되는 라이브러리 구축',
+          '일관된 디자인 시스템 구축과 유지보수',
+          '효율적인 문서화 및 배포 자동화',
+          '개발팀 전체의 라이브러리 도입과 활용',
         ],
         solutions: [
-          'Firebase Firestore의 실시간 리스너 활용',
-          'React Beautiful DnD 라이브러리 커스터마이징',
-          '역할 기반 접근 제어(RBAC) 시스템 구현',
-          'Service Worker를 통한 오프라인 캐싱',
+          'Vite를 활용한 모듈 번들링으로 다양한 환경 지원',
+          'Storybook과 AI를 활용한 자동화된 문서화 시스템',
+          'GitHub Actions와 GitHub Packages를 통한 CI/CD 구축',
+          '점진적 도입 전략과 팀 교육을 통한 안정적인 전환',
         ],
-        duration: '4개월',
-        teamSize: '3명 (프론트엔드 2명, 백엔드 1명)',
-        role: '풀스택 개발자',
+        duration: '6개월 (2024.02 - 2024.08)',
+        teamSize: '프론트엔드 파트장 (단독 개발)',
+        role: '디자인 시스템 아키텍트 & 개발자',
         results: [
-          '팀 생산성 30% 향상',
-          '사용자 만족도 4.8/5.0',
-          '일일 활성 사용자 500명 달성',
-          '태스크 완료율 85% 향상',
+          'UI 작업공수 평균 30-50% 감소',
+          '문서화 관련 작업시간 80% 감소',
+          '전사 프로젝트 UI 일관성 확보',
+          '개발팀 생산성 대폭 향상',
         ],
       },
     },
     {
-      title: 'Weather Dashboard',
+      title: 'Toodee 배포환경 및 CI/CD 개선',
       description:
-        'A responsive weather dashboard that displays current weather conditions and forecasts for multiple cities with beautiful data visualizations.',
+        '기존의 비효율적인 투디의 배포환경을 최적의 구조로 개선하여 배포시간을 5분에서 1.5분으로 단축했습니다.',
       image: '/placeholder.svg?height=300&width=400',
-      technologies: ['React', 'Chart.js', 'OpenWeather API', 'CSS3'],
-      liveUrl: 'https://example.com',
-      githubUrl: 'https://github.com',
+      technologies: [
+        'Docker',
+        'Nginx',
+        'PM2',
+        'Next.js',
+        'GitHub Actions',
+        'Node.js',
+      ],
       details: {
         overview:
-          '다양한 도시의 날씨 정보를 실시간으로 제공하는 대시보드입니다. 직관적인 데이터 시각화와 예측 정보를 통해 사용자에게 유용한 날씨 인사이트를 제공합니다.',
+          '기존의 비효율적인 배포 프로세스를 Docker 기반의 현대적인 배포 환경으로 개선하여 배포 시간 단축과 안정성을 확보한 인프라 개선 프로젝트입니다.',
         features: [
-          '실시간 날씨 정보 및 7일 예보',
-          '다중 도시 날씨 비교',
-          '인터랙티브 차트 및 그래프',
-          '위치 기반 자동 날씨 정보',
-          '날씨 알림 및 경고',
-          '히스토리 데이터 분석',
+          'Docker 이미지 기반 배포 방식으로 전환',
+          'Nginx와 PM2 빌드 커맨드 최적화',
+          'Next.js standalone 배포 방식 적용',
+          'Node 버전 호환성 이슈 해결',
+          '배포 용량 최적화',
         ],
         challenges: [
-          '다양한 API 데이터 통합 및 정규화',
-          '실시간 데이터 업데이트 최적화',
-          '복잡한 차트 데이터 시각화',
-          '모바일 반응형 차트 구현',
+          'Node 버전 호환성으로 인한 배포 실패',
+          '긴 배포 시간으로 인한 개발 효율성 저하',
+          '배포 용량 최적화 필요',
+          '안정적인 배포 환경 구축',
         ],
         solutions: [
-          'OpenWeather API와 추가 기상 API 통합',
-          'React Query를 통한 효율적인 데이터 페칭',
-          'Chart.js 커스터마이징 및 반응형 구현',
-          'PWA 기능으로 오프라인 지원',
+          'Docker 이미지 배포 방식으로 Node 호환성 이슈 해결',
+          'Nginx와 PM2 설정 최적화로 빌드 시간 단축',
+          'Next.js standalone 모드 적용으로 배포 용량 감소',
+          '자동화된 배포 파이프라인 구축',
         ],
-        duration: '2개월',
-        teamSize: '2명 (개발자 1명, 디자이너 1명)',
+        duration: '2개월 (2024.06 - 2024.07)',
+        teamSize: '프론트엔드 파트장 (DevOps 담당)',
+        role: 'DevOps 엔지니어 & 프론트엔드 개발자',
+        results: [
+          '배포시간 5분 → 1.5분으로 70% 단축',
+          'Node 호환성 이슈 완전 해결',
+          '배포 용량 대폭 감소',
+          '배포 안정성 및 신뢰성 향상',
+        ],
+      },
+    },
+    {
+      title: 'Coconuts 컨설팅 리뉴얼',
+      description:
+        'Vue.js 기반 레거시 서비스의 UI/UX 개선 및 내부 로직 개선 작업과 범용 컨설팅 서비스를 위한 설계 변경을 진행했습니다.',
+      image: '/placeholder.svg?height=300&width=400',
+      technologies: [
+        'React',
+        'Vue.js',
+        'TypeScript',
+        'Webpack',
+        'Module Federation',
+        'Pinia',
+        'Mermaid',
+      ],
+      details: {
+        overview:
+          'Vue.js 기반의 레거시 컨설팅 서비스를 React 기반으로 점진적으로 전환하면서 UI/UX 개선과 아키텍처 현대화를 진행한 대규모 리뉴얼 프로젝트입니다.',
+        features: [
+          'Webpack Module Federation을 활용한 점진적 마이그레이션',
+          'Vue에서 React로의 기술 스택 전환',
+          'TypeScript 마이그레이션으로 타입 안정성 확보',
+          'Mermaid를 활용한 인터페이스 시각화',
+          'Vue Composition API와 Pinia를 활용한 상태 관리 개선',
+        ],
+        challenges: [
+          'Vue.js에서 React로의 점진적 마이그레이션',
+          '레거시 JavaScript 코드의 TypeScript 전환',
+          '복잡한 데이터 구조의 가독성 개선',
+          '기존 기능 유지하면서 새로운 아키텍처 적용',
+        ],
+        solutions: [
+          'Module Federation을 활용한 단계적 마이그레이션 전략',
+          'TypeScript 점진적 도입으로 안정성 확보',
+          'Mermaid 다이어그램으로 데이터 구조 시각화',
+          'Vue Composition API와 Pinia로 상태 관리 현대화',
+        ],
+        duration: '9개월 (2024.03 - 2024.12)',
+        teamSize: '프론트엔드 파트장',
+        role: '프론트엔드 아키텍트 & 개발 리드',
+        results: [
+          'Vue에서 React로 성공적인 기술 스택 전환',
+          'TypeScript 도입으로 코드 안정성 향상',
+          '데이터 구조 가독성 대폭 개선',
+          '유지보수성과 확장성 확보',
+        ],
+      },
+    },
+    {
+      title: 'VLOC Console',
+      description:
+        'SDK의 사용량에 대한 결제 및 토큰 발급, 사용량 모니터링이 가능한 B2C 서비스를 개발하여 API 호출수 감소와 빌드시간 40% 단축을 달성했습니다.',
+      image: '/placeholder.svg?height=300&width=400',
+      technologies: [
+        'React',
+        'Next.js',
+        'React Query',
+        'TypeScript',
+        'Docker',
+        'Jest',
+        'Testing Library',
+      ],
+      details: {
+        overview:
+          'SDK 사용량 모니터링과 결제 시스템을 제공하는 B2C 콘솔 서비스입니다. 성능 최적화와 개발 효율성에 중점을 두어 개발했습니다.',
+        features: [
+          'React Query를 활용한 API 캐싱 시스템',
+          'ISR을 적용한 서버 사이드 캐싱',
+          'Docker 멀티 스테이지 빌드 최적화',
+          '번들 최적화를 통한 Web Vitals 개선',
+          'Jest와 Testing Library 기반 테스트 환경',
+        ],
+        challenges: [
+          '대량의 API 호출로 인한 성능 이슈',
+          '빌드 시간과 배포 용량 최적화',
+          'Web Vitals 성능 지표 개선',
+          '안정적인 테스트 환경 구축',
+        ],
+        solutions: [
+          'React Query 도입으로 클라이언트 캐싱 최적화',
+          'ISR 적용으로 서버 사이드 캐싱 구현',
+          'Docker 최적화로 빌드 및 배포 효율성 향상',
+          '번들 분석과 최적화로 성능 지표 개선',
+        ],
+        duration: '6개월 (2022.10 - 2023.03)',
+        teamSize: '프론트엔드 개발자 (팀원)',
         role: '프론트엔드 개발자',
         results: [
-          'API 호출 최적화로 비용 60% 절감',
-          '모바일 사용률 70% 달성',
-          '평균 세션 시간 5분 증가',
-          '사용자 재방문율 80% 달성',
+          'API 호출횟수 17% 감소',
+          '공통 API 호출수 1/10 감소',
+          '빌드시간 40% 감소, 배포 소요시간 60% 감소',
+          'Web Vitals 성능 지표 70→90점 이상 달성',
         ],
       },
     },
     {
-      title: 'Portfolio Website',
+      title: 'Editor 2.0',
       description:
-        'A modern, responsive portfolio website showcasing my work and skills. Built with performance and accessibility in mind.',
+        '레거시 Editor를 리뉴얼하고 최신 기술스택을 적용하여 로드시간을 5.5초에서 2초로 단축하고 테스트 커버리지 50%를 확보했습니다.',
       image: '/placeholder.svg?height=300&width=400',
-      technologies: ['Next.js', 'Tailwind CSS', 'Framer Motion', 'TypeScript'],
-      liveUrl: 'https://example.com',
-      githubUrl: 'https://github.com',
+      technologies: [
+        'React',
+        'Redux Toolkit',
+        'TypeScript',
+        'Webpack',
+        'ESBuild',
+        'Jest',
+        'Storybook',
+      ],
       details: {
         overview:
-          '개인 포트폴리오 웹사이트로, 최신 웹 기술과 디자인 트렌드를 적용하여 제작했습니다. 성능과 접근성을 최우선으로 고려한 현대적인 웹사이트입니다.',
+          '레거시 에디터를 현대적인 기술 스택으로 완전히 리뉴얼한 프로젝트입니다. 성능 최적화와 개발자 경험 개선에 중점을 두었습니다.',
         features: [
-          '반응형 디자인 및 모바일 최적화',
-          '부드러운 애니메이션 및 인터랙션',
-          'SEO 최적화 및 메타 태그 관리',
-          '다크/라이트 모드 지원',
-          '접근성 표준 준수',
-          '빠른 로딩 속도 및 성능 최적화',
+          'Redux Toolkit을 활용한 상태 관리 현대화',
+          'Webpack 기반 프로젝트 스캐폴딩',
+          'ESBuild-loader를 통한 빌드 최적화',
+          'Jest와 React Testing Library 테스트 환경',
+          'Storybook을 활용한 컴포넌트 문서화',
         ],
         challenges: [
-          '복잡한 애니메이션과 성능 최적화 균형',
-          'SEO와 SPA의 호환성 문제',
-          '다양한 디바이스에서의 일관된 UX',
-          '접근성 표준 준수',
+          '레거시 Redux 코드의 복잡성',
+          '긴 로드 시간으로 인한 사용자 경험 저하',
+          '테스트 환경 부재로 인한 품질 관리 어려움',
+          '컴포넌트 문서화 및 관리 체계 부족',
         ],
         solutions: [
-          'Framer Motion을 활용한 최적화된 애니메이션',
-          'Next.js SSG를 통한 SEO 최적화',
-          'Tailwind CSS를 활용한 반응형 디자인',
-          'ARIA 라벨 및 키보드 네비게이션 구현',
+          'Redux Toolkit 도입으로 상태 관리 로직 간소화',
+          'ESBuild-loader 적용으로 빌드 성능 대폭 개선',
+          'Jest와 Testing Library로 포괄적인 테스트 환경 구축',
+          'Storybook을 통한 컴포넌트 문서화 시스템 구축',
         ],
-        duration: '1개월',
-        teamSize: '1명 (개인 프로젝트)',
-        role: '풀스택 개발자 & 디자이너',
+        duration: '6개월 (2021.06 - 2021.12)',
+        teamSize: '프론트엔드 개발자',
+        role: '프론트엔드 개발자',
         results: [
-          'Lighthouse 성능 점수 98점 달성',
-          '접근성 점수 100점 달성',
-          '페이지 로딩 속도 1초 이내',
-          '모든 주요 브라우저 호환성 확보',
-        ],
-      },
-    },
-    {
-      title: 'Social Media Dashboard',
-      description:
-        'A comprehensive social media analytics dashboard with data visualization, user engagement metrics, and content management features.',
-      image: '/placeholder.svg?height=300&width=400',
-      technologies: ['React', 'D3.js', 'Node.js', 'MongoDB'],
-      liveUrl: 'https://example.com',
-      githubUrl: 'https://github.com',
-      details: {
-        overview:
-          '소셜 미디어 분석을 위한 종합 대시보드입니다. 다양한 플랫폼의 데이터를 통합하여 인사이트를 제공하고, 콘텐츠 성과를 분석할 수 있는 도구입니다.',
-        features: [
-          '다중 소셜 미디어 플랫폼 연동',
-          '실시간 분석 및 리포팅',
-          '커스터마이징 가능한 대시보드',
-          '자동화된 리포트 생성',
-          '팀 협업 및 권한 관리',
-          '예측 분석 및 트렌드 인사이트',
-        ],
-        challenges: [
-          '다양한 API 통합 및 데이터 정규화',
-          '대용량 데이터 처리 및 시각화',
-          '실시간 데이터 스트리밍',
-          '복잡한 권한 관리 시스템',
-        ],
-        solutions: [
-          'GraphQL을 통한 효율적인 데이터 페칭',
-          'D3.js와 Canvas를 활용한 고성능 시각화',
-          'WebSocket을 통한 실시간 업데이트',
-          'JWT 기반 인증 및 역할 관리',
-        ],
-        duration: '8개월',
-        teamSize: '6명 (프론트엔드 3명, 백엔드 2명, 데이터 분석가 1명)',
-        role: '프론트엔드 시니어 개발자',
-        results: [
-          '데이터 처리 속도 50% 향상',
-          '사용자 인게이지먼트 40% 증가',
-          '리포트 생성 시간 80% 단축',
-          '고객 만족도 4.9/5.0 달성',
-        ],
-      },
-    },
-    {
-      title: 'Recipe Finder App',
-      description:
-        'A recipe discovery app that helps users find recipes based on ingredients they have. Features include meal planning and shopping lists.',
-      image: '/placeholder.svg?height=300&width=400',
-      technologies: ['React Native', 'Expo', 'Firebase', 'Spoonacular API'],
-      liveUrl: 'https://example.com',
-      githubUrl: 'https://github.com',
-      details: {
-        overview:
-          '사용자가 보유한 재료를 기반으로 레시피를 추천하는 모바일 애플리케이션입니다. AI 기반 추천 시스템과 식단 계획 기능을 통해 요리의 즐거움을 제공합니다.',
-        features: [
-          '재료 기반 레시피 검색 및 추천',
-          'AI 기반 개인화 추천 시스템',
-          '식단 계획 및 쇼핑 리스트 생성',
-          '영양 정보 및 칼로리 계산',
-          '요리 타이머 및 단계별 가이드',
-          '사용자 리뷰 및 평점 시스템',
-        ],
-        challenges: [
-          '복잡한 레시피 매칭 알고리즘',
-          '모바일 성능 최적화',
-          '오프라인 모드 지원',
-          '다양한 디바이스 호환성',
-        ],
-        solutions: [
-          'Spoonacular API와 자체 알고리즘 결합',
-          'React Native 성능 최적화 기법 적용',
-          'SQLite를 활용한 로컬 데이터 저장',
-          'Expo를 통한 크로스 플랫폼 개발',
-        ],
-        duration: '5개월',
-        teamSize: '4명 (모바일 개발자 2명, 백엔드 1명, UI/UX 1명)',
-        role: '모바일 앱 개발자',
-        results: [
-          '앱스토어 평점 4.7/5.0',
-          '다운로드 수 10만+ 달성',
-          '일일 활성 사용자 5,000명',
-          '사용자 리텐션율 65% 달성',
+          '로드시간 5.5초 → 2초로 64% 단축',
+          '테스트 커버리지 50% 확보',
+          'Redux 코드 복잡성 대폭 감소',
+          '개발자 경험 및 유지보수성 향상',
         ],
       },
     },
@@ -362,7 +391,7 @@ export default function Projects() {
               </CardHeader>
               <CardContent className="flex flex-col flex-1">
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech, techIndex) => (
+                  {project.technologies.slice(0, 4).map((tech, techIndex) => (
                     <span
                       key={techIndex}
                       className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full hover:bg-blue-200 transition-colors duration-200"
@@ -370,9 +399,17 @@ export default function Projects() {
                       {tech}
                     </span>
                   ))}
+                  {project.technologies.length > 4 && (
+                    <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">
+                      +{project.technologies.length - 4}
+                    </span>
+                  )}
                 </div>
                 <div className="mt-auto">
-                  <Button className="w-full bg-blue-600 hover:bg-blue-700 transform hover:scale-105 transition-transform duration-200">
+                  <Button
+                    className="w-full bg-blue-600 hover:bg-blue-700 transform hover:scale-105 transition-transform duration-200"
+                    onClick={() => setSelectedProject(project)}
+                  >
                     <Eye className="mr-2 h-4 w-4" />
                     프로젝트 자세히 알아보기
                   </Button>
@@ -382,6 +419,172 @@ export default function Projects() {
           ))}
         </div>
       </div>
+
+      {/* Project Detail Modal */}
+      <Dialog
+        open={!!selectedProject}
+        onOpenChange={() => setSelectedProject(null)}
+      >
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-bold">
+              {selectedProject?.title}
+            </DialogTitle>
+          </DialogHeader>
+
+          {selectedProject && (
+            <div className="space-y-6">
+              {/* Project Image */}
+              <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden">
+                <img
+                  src={selectedProject.image || '/placeholder.svg'}
+                  alt={selectedProject.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              {/* Overview */}
+              <div>
+                <h3 className="text-lg font-semibold mb-3">프로젝트 개요</h3>
+                <p className="text-gray-700 leading-relaxed">
+                  {selectedProject.details.overview}
+                </p>
+              </div>
+
+              {/* Project Info */}
+              <div className="grid md:grid-cols-3 gap-4 p-4 bg-gray-50 rounded-lg">
+                <div className="flex items-center gap-2">
+                  <Calendar className="h-4 w-4 text-blue-600" />
+                  <div>
+                    <p className="text-sm text-gray-600">기간</p>
+                    <p className="font-medium">
+                      {selectedProject.details.duration}
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Users className="h-4 w-4 text-green-600" />
+                  <div>
+                    <p className="text-sm text-gray-600">팀 구성</p>
+                    <p className="font-medium">
+                      {selectedProject.details.teamSize}
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Target className="h-4 w-4 text-purple-600" />
+                  <div>
+                    <p className="text-sm text-gray-600">역할</p>
+                    <p className="font-medium">
+                      {selectedProject.details.role}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Technologies */}
+              <div>
+                <h3 className="text-lg font-semibold mb-3">사용 기술</h3>
+                <div className="flex flex-wrap gap-2">
+                  {selectedProject.technologies.map((tech, index) => (
+                    <Badge key={index} variant="secondary" className="text-sm">
+                      {tech}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+
+              {/* Features */}
+              <div>
+                <h3 className="text-lg font-semibold mb-3">주요 기능</h3>
+                <ul className="space-y-2">
+                  {selectedProject.details.features.map((feature, index) => (
+                    <li key={index} className="flex items-start gap-2">
+                      <span className="text-blue-600 mt-1">•</span>
+                      <span className="text-gray-700">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Challenges & Solutions */}
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h3 className="text-lg font-semibold mb-3">주요 도전과제</h3>
+                  <ul className="space-y-2">
+                    {selectedProject.details.challenges.map(
+                      (challenge, index) => (
+                        <li key={index} className="flex items-start gap-2">
+                          <span className="text-red-500 mt-1">•</span>
+                          <span className="text-gray-700">{challenge}</span>
+                        </li>
+                      ),
+                    )}
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold mb-3">해결 방안</h3>
+                  <ul className="space-y-2">
+                    {selectedProject.details.solutions.map(
+                      (solution, index) => (
+                        <li key={index} className="flex items-start gap-2">
+                          <span className="text-green-500 mt-1">•</span>
+                          <span className="text-gray-700">{solution}</span>
+                        </li>
+                      ),
+                    )}
+                  </ul>
+                </div>
+              </div>
+
+              {/* Results */}
+              <div>
+                <h3 className="text-lg font-semibold mb-3">주요 성과</h3>
+                <div className="grid md:grid-cols-2 gap-3">
+                  {selectedProject.details.results.map((result, index) => (
+                    <div
+                      key={index}
+                      className="p-3 bg-green-50 border border-green-200 rounded-lg"
+                    >
+                      <p className="text-green-800 font-medium">{result}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Links */}
+              {(selectedProject.liveUrl || selectedProject.githubUrl) && (
+                <div className="flex gap-4 pt-4 border-t">
+                  {selectedProject.liveUrl && (
+                    <Button asChild variant="outline">
+                      <a
+                        href={selectedProject.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="mr-2 h-4 w-4" />
+                        라이브 사이트
+                      </a>
+                    </Button>
+                  )}
+                  {selectedProject.githubUrl && (
+                    <Button asChild variant="outline">
+                      <a
+                        href={selectedProject.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Github className="mr-2 h-4 w-4" />
+                        GitHub
+                      </a>
+                    </Button>
+                  )}
+                </div>
+              )}
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 }

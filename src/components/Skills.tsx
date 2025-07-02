@@ -108,10 +108,6 @@ export default function Skills() {
               기술 스택
             </h2>
             <div className="w-20 h-1 bg-blue-600 mx-auto mb-4"></div>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              다양한 프론트엔드 기술과 도구를 활용하여 최적화된 웹
-              애플리케이션을 구축합니다.
-            </p>
           </div>
         </AnimatedSection>
 
@@ -142,7 +138,7 @@ export default function Skills() {
                   {category.skills.map((skill, skillIndex) => (
                     <span
                       key={skillIndex}
-                      className="px-3 py-1.5 bg-blue-100 text-blue-800 text-sm rounded-full hover:bg-blue-200 transition-all duration-200 transform hover:scale-105 cursor-default font-medium"
+                      className="px-3 py-1.5 bg-blue-100 text-blue-800 text-lg rounded-full hover:bg-blue-200 transition-all duration-200 transform hover:scale-105 cursor-default font-medium"
                       style={{
                         opacity: isVisible ? 1 : 0,
                         transform: isVisible
