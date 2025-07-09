@@ -12,7 +12,6 @@ export default function Page() {
       <main>
         <Hero />
         <About />
-        <Skills />
         <Projects />
       </main>
       <Footer />
