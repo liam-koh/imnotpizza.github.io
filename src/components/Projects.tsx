@@ -4,11 +4,9 @@ import { useEffect, useRef, useState } from 'react';
 import {
   ExternalLink,
   Github,
-  Eye,
   Calendar,
   Users,
   Target,
-  Award,
   TrendingUp,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -60,7 +58,6 @@ interface Project {
 export default function Projects() {
   const [isVisible, setIsVisible] = useState(false);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const projectsRef = useRef<HTMLDivElement>(null);
 
   const projects: Project[] = [
@@ -94,7 +91,7 @@ export default function Projects() {
           'React Query를 통한 효율적인 서버 상태 관리',
           'Vitest와 React Testing Library를 활용한 테스트 환경 구축',
           'MSW 2.x를 활용한 일관성 있는 모킹 환경',
-          'Web Vitals 지표 개선을 통한 성능 최적화', 
+          'Web Vitals 지표 개선을 통한 성능 최적화',
         ],
         challenges: [
           '레거시 코드의 복잡한 구조와 기술 부채',
@@ -114,115 +111,6 @@ export default function Projects() {
           '퍼포먼스 30% 향상으로 사용자 경험 개선',
           '핵심 로직 테스트 커버리지 100% 달성',
           'LCP 48% 감소, FCP 60% 감소',
-        ],
-      },
-    },
-    {
-      id: 'o2pluss-design-system',
-      title: 'O2pluss Design System',
-      subtitle: '범용 UI 라이브러리',
-      description:
-        '회사 내 모든 프로젝트에서 사용되는 디자인 시스템을 구축하여 UI 작업공수 평균 70% 감소 달성',
-      image: '/placeholder.svg?height=300&width=400&text=Design+System',
-      technologies: [
-        'React',
-        'TypeScript',
-        'Vite',
-        'Storybook',
-        'GitHub Actions',
-        'Chromatic',
-        'Rollup',
-      ],
-      category: 'Design System',
-      period: '2024.02 - 2024.08',
-      impact: [
-        'UI 작업공수 70% 감소',
-        '문서화 시간 80% 단축',
-        '전사 UI 일관성 확보',
-      ],
-      githubUrl: 'https://github.com/o2pluss',
-      featured: true,
-      details: {
-        overview:
-          '회사 내 모든 프로젝트에서 일관된 UI/UX를 제공하고 개발 효율성을 높이기 위한 디자인 시스템 라이브러리입니다.',
-        features: [
-          '재사용 가능하고 커스터마이징 가능한 컴포넌트 라이브러리',
-          'Vite를 활용한 다양한 환경(SSR, CJS, ESM) 지원',
-          'Storybook을 통한 컴포넌트 문서화 및 예제 제공',
-          'GitHub Actions를 활용한 자동 배포 파이프라인',
-          'AI를 활용한 문서화 자동화',
-        ],
-        challenges: [
-          '다양한 프로젝트 환경에서 호환되는 라이브러리 구축',
-          '일관된 디자인 시스템 구축과 유지보수',
-          '효율적인 문서화 및 배포 자동화',
-        ],
-        solutions: [
-          'Vite를 활용한 모듈 번들링으로 다양한 환경 지원',
-          'Storybook과 AI를 활용한 자동화된 문서화 시스템',
-          'GitHub Actions와 GitHub Packages를 통한 CI/CD 구축',
-        ],
-        duration: '6개월',
-        teamSize: '단독 개발',
-        role: '디자인 시스템 아키텍트 & 개발자',
-        results: [
-          'UI 작업공수 평균 30-50% 감소',
-          '문서화 관련 작업시간 80% 감소',
-          '전사 프로젝트 UI 일관성 확보',
-          '개발팀 생산성 대폭 향상',
-        ],
-      },
-    },
-    {
-      id: 'toodee-devops',
-      title: 'Toodee 배포환경 개선',
-      subtitle: 'CI/CD 최적화',
-      description:
-        'Docker 기반 배포 환경으로 전환하여 배포시간을 5분에서 1.5분으로 70% 단축하고 Node 호환성 이슈 해결',
-      image: '/placeholder.svg?height=300&width=400&text=DevOps+Optimization',
-      technologies: [
-        'Docker',
-        'Nginx',
-        'PM2',
-        'Next.js',
-        'GitHub Actions',
-        'Node.js',
-      ],
-      category: 'DevOps & Infrastructure',
-      period: '2024.06 - 2024.07',
-      impact: [
-        '배포시간 70% 단축',
-        'Node 호환성 이슈 해결',
-        '배포 안정성 향상',
-      ],
-      featured: true,
-      details: {
-        overview:
-          '기존의 비효율적인 배포 프로세스를 Docker 기반의 현대적인 배포 환경으로 개선한 인프라 최적화 프로젝트입니다.',
-        features: [
-          'Docker 이미지 기반 배포 방식으로 전환',
-          'Nginx와 PM2 빌드 커맨드 최적화',
-          'Next.js standalone 배포 방식 적용',
-          'Node 버전 호환성 이슈 해결',
-        ],
-        challenges: [
-          'Node 버전 호환성으로 인한 배포 실패',
-          '긴 배포 시간으로 인한 개발 효율성 저하',
-          '배포 용량 최적화 필요',
-        ],
-        solutions: [
-          'Docker 이미지 배포 방식으로 Node 호환성 이슈 해결',
-          'Nginx와 PM2 설정 최적화로 빌드 시간 단축',
-          'Next.js standalone 모드 적용으로 배포 용량 감소',
-        ],
-        duration: '2개월',
-        teamSize: 'DevOps 담당',
-        role: 'DevOps 엔지니어 & 프론트엔드 개발자',
-        results: [
-          '배포시간 5분 → 1.5분으로 70% 단축',
-          'Node 호환성 이슈 완전 해결',
-          '배포 용량 대폭 감소',
-          '배포 안정성 및 신뢰성 향상',
         ],
       },
     },
@@ -259,7 +147,7 @@ export default function Projects() {
           'Mermaid를 활용한 인터페이스 시각화',
         ],
         challenges: [
-          'Vue.js에서 React로의 점진적 마이그레이션',
+          'Vue.js에서 React로의 점진��� 마이그레이션',
           '레거시 JavaScript 코드의 TypeScript 전환',
           '복잡한 데이터 구조의 가독성 개선',
         ],
@@ -333,74 +221,59 @@ export default function Projects() {
       },
     },
     {
-      id: 'editor-2.0',
-      title: 'Editor 2.0',
-      subtitle: '레거시 에디터 리뉴얼',
+      id: 'larla-project',
+      title: 'Larla',
+      subtitle: '소셜 커머스 플랫폼',
       description:
-        '레거시 에디터를 현대적인 기술 스택으로 완전 리뉴얼하여 로드시간 64% 단축 및 테스트 커버리지 50% 확보',
-      image: '/placeholder.svg?height=300&width=400&text=Editor+2.0',
+        '소셜 미디어와 커머스를 결합한 혁신적인 플랫폼으로 사용자 참여도 40% 증가 및 전환율 25% 향상 달성',
+      image: '/placeholder.svg?height=300&width=400&text=Larla+Platform',
       technologies: [
         'React',
-        'Redux Toolkit',
+        'Next.js',
         'TypeScript',
-        'Webpack',
-        'ESBuild',
-        'Jest',
-        'Storybook',
+        'Redux Toolkit',
+        'Styled Components',
+        'Socket.io',
+        'PWA',
       ],
-      category: 'Performance Optimization',
-      period: '2021.06 - 2021.12',
+      category: 'Frontend Development',
+      period: '2023.05 - 2023.11',
       impact: [
-        '로드시간 64% 단축',
-        '테스트 커버리지 50%',
-        'Redux 코드 복잡성 감소',
+        '사용자 참여도 40% 증가',
+        '전환율 25% 향상',
+        'PWA 도입으로 모바일 UX 개선',
       ],
       details: {
         overview:
-          '레거시 에디터를 현대적인 기술 스택으로 완전히 리뉴얼한 프로젝트입니다. 성능 최적화와 개발자 경험 개선에 중점을 두었습니다.',
+          '소셜 미디어의 상호작용성과 전자상거래의 편의성을 결합한 혁신적인 소셜 커머스 플랫폼입니다.',
         features: [
-          'Redux Toolkit을 활용한 상태 관리 현대화',
-          'Webpack 기반 프로젝트 스캐폴딩',
-          'ESBuild-loader를 통한 빌드 최적화',
-          'Jest와 React Testing Library 테스트 환경',
+          '실시간 소셜 피드와 상품 추천 시스템',
+          'Socket.io를 활용한 실시간 채팅 및 알림',
+          'PWA 기술로 네이티브 앱 수준의 사용자 경험',
+          'Redux Toolkit을 통한 복잡한 상태 관리',
         ],
         challenges: [
-          '레거시 Redux 코드의 복잡성',
-          '긴 로드 시간으로 인한 사용자 경험 저하',
-          '테스트 환경 부재로 인한 품질 관리 어려움',
+          '실시간 데이터 동기화와 성능 최적화',
+          '복잡한 사용자 인터랙션 관리',
+          '모바일 우선 반응형 디자인 구현',
         ],
         solutions: [
-          'Redux Toolkit 도입으로 상태 관리 로직 간소화',
-          'ESBuild-loader 적용으로 빌드 성능 대폭 개선',
-          'Jest와 Testing Library로 포괄적인 테스트 환경 구축',
+          'Socket.io와 Redux를 연동한 실시간 상태 관리',
+          'PWA 기술 도입으로 모바일 사용성 극대화',
+          'Styled Components로 일관된 디자인 시스템 구축',
         ],
         duration: '6개월',
-        teamSize: '프론트엔드 개발자',
-        role: '프론트엔드 개발자',
+        teamSize: '풀스택 개발자',
+        role: '프론트엔드 리드 개발자',
         results: [
-          '로드시간 5.5초 → 2초로 64% 단축',
-          '테스트 커버리지 50% 확보',
-          'Redux 코드 복잡성 대폭 감소',
-          '개발자 경험 및 유지보수성 향상',
+          '사용자 참여도 40% 증가',
+          '구매 전환율 25% 향상',
+          '모바일 사용자 만족도 90% 이상',
+          'PWA 설치율 30% 달성',
         ],
       },
     },
   ];
-
-  const categories = [
-    'All',
-    'Frontend Development',
-    'DevOps & Infrastructure',
-    'Design System',
-    'Performance Optimization',
-  ];
-
-  const filteredProjects =
-    selectedCategory === 'All'
-      ? projects
-      : projects.filter((project) => project.category === selectedCategory);
-
-  const featuredProjects = projects.filter((project) => project.featured);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -451,74 +324,68 @@ export default function Projects() {
 
   return (
     <section id="projects" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection animation="fade-up">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
               주요 프로젝트
             </h2>
             <div className="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              3년간의 프론트엔드 개발 경험을 통해 다양한 도메인에서 성과를
-              창출한 주요 프로젝트들입니다.
-            </p>
           </div>
         </AnimatedSection>
 
-        {/* Featured Projects */}
-        <AnimatedSection animation="fade-up" delay={200}>
-          <div className="mb-16">
-            <div className="flex items-center gap-2 mb-8">
-              <Award className="h-6 w-6 text-yellow-600" />
-              <h3 className="text-2xl font-bold text-gray-900">
-                주요 성과 프로젝트
-              </h3>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {featuredProjects.map((project, index) => (
-                <Card
-                  key={project.id}
-                  className="relative overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 border-2 border-yellow-200"
-                >
-                  <div className="absolute top-4 right-4 z-10">
-                    <Badge className="bg-yellow-500 text-white">
-                      <Award className="h-3 w-3 mr-1" />
-                      Featured
-                    </Badge>
-                  </div>
-                  <div className="aspect-video bg-gray-200 overflow-hidden">
-                    <img
-                      src={project.image || '/placeholder.svg'}
-                      alt={project.title}
-                      className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-                    />
-                  </div>
+        {/* Projects Grid */}
+        <div ref={projectsRef} className="space-y-8">
+          {projects.map((project, index) => (
+            <AnimatedSection
+              key={project.id}
+              animation="fade-up"
+              delay={index * 150}
+            >
+              <Card className="flex flex-col lg:flex-row w-full lg:h-[40rem] overflow-hidden shadow-lg">
+                {/* 이미지 섹션 */}
+                <div className="lg:w-2/5 aspect-video lg:aspect-auto bg-gray-200 overflow-hidden">
+                  <img
+                    src={project.image || '/placeholder.svg'}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                {/* 콘텐츠 섹션 */}
+                <div className="lg:w-3/5 flex flex-col">
                   <CardHeader>
-                    <div className="flex items-center gap-2 mb-2">
-                      <Badge
-                        className={`${getCategoryColor(project.category)} border`}
-                      >
-                        {getCategoryIcon(project.category)} {project.category}
-                      </Badge>
-                    </div>
-                    <CardTitle className="text-xl">{project.title}</CardTitle>
-                    <CardDescription className="text-sm text-gray-500">
+                    {/* Frontend Development 카테고리가 아닌 경우에만 표시 */}
+                    {project.category !== 'Frontend Development' && (
+                      <div className="flex items-center gap-2 mb-2">
+                        <Badge
+                          className={`${getCategoryColor(project.category)} border text-xs`}
+                        >
+                          {getCategoryIcon(project.category)} {project.category}
+                        </Badge>
+                      </div>
+                    )}
+                    <CardTitle className="text-2xl lg:text-3xl">
+                      {project.title}
+                    </CardTitle>
+                    <CardDescription className="text-base lg:text-lg text-gray-500">
                       {project.subtitle}
                     </CardDescription>
-                    <p className="text-gray-700 text-sm">
+                    <p className="text-gray-700 text-base lg:text-lg">
                       {project.description}
                     </p>
                   </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div className="flex items-center gap-2 text-sm text-gray-600">
-                      <Calendar className="h-4 w-4" />
+
+                  <CardContent className="flex flex-col flex-1 space-y-4">
+                    <div className="flex items-center gap-2 text-base lg:text-lg text-gray-600">
+                      <Calendar className="h-5 w-5" />
                       {project.period}
                     </div>
 
                     <div className="space-y-2">
                       <div className="flex items-center gap-2">
-                        <TrendingUp className="h-4 w-4 text-green-600" />
-                        <span className="text-sm font-medium text-gray-700">
+                        <TrendingUp className="h-5 w-5 text-green-600" />
+                        <span className="text-base lg:text-lg font-medium text-gray-700">
                           주요 성과
                         </span>
                       </div>
@@ -528,7 +395,7 @@ export default function Projects() {
                           .map((impact, impactIndex) => (
                             <div
                               key={impactIndex}
-                              className="text-sm text-green-700 bg-green-50 px-2 py-1 rounded"
+                              className="text-base lg:text-lg text-green-700 bg-green-50 px-3 py-2 rounded"
                             >
                               • {impact}
                             </div>
@@ -536,150 +403,27 @@ export default function Projects() {
                       </div>
                     </div>
 
-                    <div className="flex flex-wrap gap-1">
+                    <div className="flex flex-wrap gap-2">
                       {project.technologies
-                        .slice(0, 3)
+                        .slice(0, 4)
                         .map((tech, techIndex) => (
                           <span
                             key={techIndex}
-                            className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full"
+                            className="px-3 py-2 bg-blue-100 text-blue-800 text-sm lg:text-base rounded-full hover:bg-blue-200 transition-colors duration-200"
                           >
                             {tech}
                           </span>
                         ))}
-                      {project.technologies.length > 3 && (
-                        <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">
-                          +{project.technologies.length - 3}
+                      {project.technologies.length > 4 && (
+                        <span className="px-3 py-2 bg-gray-100 text-gray-600 text-sm lg:text-base rounded-full">
+                          +{project.technologies.length - 4}
                         </span>
                       )}
                     </div>
-
-                    <Button
-                      className="w-full bg-blue-600 hover:bg-blue-700"
-                      onClick={() => setSelectedProject(project)}
-                    >
-                      <Eye className="mr-2 h-4 w-4" />
-                      자세히 보기
-                    </Button>
                   </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </AnimatedSection>
-
-        {/* Category Filter */}
-        <AnimatedSection animation="fade-up" delay={300}>
-          <div className="mb-8">
-            <div className="flex flex-wrap justify-center gap-2">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setSelectedCategory(category)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
-                    selectedCategory === category
-                      ? 'bg-blue-600 text-white shadow-lg'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                  }`}
-                >
-                  {category === 'All'
-                    ? '전체'
-                    : `${getCategoryIcon(category)} ${category}`}
-                </button>
-              ))}
-            </div>
-          </div>
-        </AnimatedSection>
-
-        {/* All Projects */}
-        <div
-          ref={projectsRef}
-          className={`grid md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-children ${isVisible ? 'animate' : ''}`}
-        >
-          {filteredProjects.map((project, index) => (
-            <Card
-              key={project.id}
-              className="flex flex-col h-full overflow-hidden hover:shadow-lg transition-all duration-300 transform hover:scale-105 hover:-translate-y-2"
-            >
-              <div className="aspect-video bg-gray-200 overflow-hidden">
-                <img
-                  src={project.image || '/placeholder.svg'}
-                  alt={project.title}
-                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-                />
-              </div>
-              <CardHeader>
-                <div className="flex items-center gap-2 mb-2">
-                  <Badge
-                    className={`${getCategoryColor(project.category)} border text-xs`}
-                  >
-                    {getCategoryIcon(project.category)} {project.category}
-                  </Badge>
-                  {project.featured && (
-                    <Badge className="bg-yellow-500 text-white text-xs">
-                      <Award className="h-3 w-3 mr-1" />
-                      Featured
-                    </Badge>
-                  )}
                 </div>
-                <CardTitle className="text-xl">{project.title}</CardTitle>
-                <CardDescription className="text-sm text-gray-500">
-                  {project.subtitle}
-                </CardDescription>
-                <p className="text-gray-700 text-sm">{project.description}</p>
-              </CardHeader>
-              <CardContent className="flex flex-col flex-1 space-y-4">
-                <div className="flex items-center gap-2 text-sm text-gray-600">
-                  <Calendar className="h-4 w-4" />
-                  {project.period}
-                </div>
-
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2">
-                    <TrendingUp className="h-4 w-4 text-green-600" />
-                    <span className="text-sm font-medium text-gray-700">
-                      주요 성과
-                    </span>
-                  </div>
-                  <div className="space-y-1">
-                    {project.impact.slice(0, 2).map((impact, impactIndex) => (
-                      <div
-                        key={impactIndex}
-                        className="text-sm text-green-700 bg-green-50 px-2 py-1 rounded"
-                      >
-                        • {impact}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="flex flex-wrap gap-1">
-                  {project.technologies.slice(0, 4).map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full hover:bg-blue-200 transition-colors duration-200"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                  {project.technologies.length > 4 && (
-                    <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">
-                      +{project.technologies.length - 4}
-                    </span>
-                  )}
-                </div>
-
-                <div className="mt-auto">
-                  <Button
-                    className="w-full bg-blue-600 hover:bg-blue-700 transform hover:scale-105 transition-transform duration-200"
-                    onClick={() => setSelectedProject(project)}
-                  >
-                    <Eye className="mr-2 h-4 w-4" />
-                    프로젝트 자세히 알아보기
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
+              </Card>
+            </AnimatedSection>
           ))}
         </div>
       </div>
@@ -698,12 +442,6 @@ export default function Projects() {
                 >
                   {getCategoryIcon(selectedProject.category)}{' '}
                   {selectedProject.category}
-                </Badge>
-              )}
-              {selectedProject?.featured && (
-                <Badge className="bg-yellow-500 text-white">
-                  <Award className="h-3 w-3 mr-1" />
-                  Featured Project
                 </Badge>
               )}
             </div>
