@@ -1,51 +1,92 @@
 import AnimatedSection from './AnimatedSection';
-import { Card, CardContent } from '@/components/ui/card';
+import SkillSection from './SkillsSection';
 
 export default function About() {
-  const techStacks = [
+  const hardSkills = [
     {
       title: 'Frontend Development',
-      description:
-        'Javascript, Typescript 기반 React, Vue.js, Next.js 등 모던 프레임워크를 활용한 서비스 개발 경험 5년 이상',
+      items: [
+        {
+          name: 'Frontend Development',
+          description: [
+            'Javascript, Typescript 기반 React, Vue.js, Next.js 등 모던 라이브러리, 프레임워크를 활용한 서비스 개발 경험 5년 이상',
+          ],
+        },
+        {
+          name: 'Build & Bundle',
+          description: [
+            'Webpack, Vite, Rollup 등 번들러 커스터마이징을 통한 최적화 및 라이브러리 제작 및 배포 경험',
+          ],
+        },
+        {
+          name: 'Testing',
+          description: [
+            'Jest, Vitest, React Testing Library 활용한 체계적 단위테스트 작성 및 테스트 커버리지 관리',
+          ],
+        },
+        {
+          name: 'Performance Optimization',
+          description: [
+            'Lighthouse 사용한 Web Vitals 지표 측정 및 개선',
+            'Web Profiling 등을 활용한 프레임 드랍 원인 분석 및 개선 경험',
+          ],
+        },
+      ],
     },
-
     {
-      title: 'Build & Bundle',
-      description:
-        'Webpack, Vite, Rollup 등 번들러 커스터마이징을 통한 최적화 및 라이브러리 배포 경험',
+      title: 'DevOps',
+      items: [
+        {
+          name: '배포환경',
+          description: [
+            'EC2, Docker, Nginx, Vercel 활용한 배포환경 구축 및 최적화 경험',
+          ],
+        },
+        {
+          name: 'CI/CD',
+          description: [
+            'GitHub Actions 활용한 자동화된 빌드, 테스트, 배포 파이프라인 구축 및 운영',
+          ],
+        },
+      ],
     },
     {
-      title: 'DevOps & Deploy',
-      description:
-        'EC2, Docker, GitHub Actions 등을 활용한 CI/CD 구축 및 배포 최적화',
-    },
-    {
-      title: 'Testing',
-      description:
-        'Jest, Vitest, React Testing Library 활용한 체계적 단위테스트 작성, 시각',
+      title: 'AI Automation',
+      items: [
+        {
+          name: 'AI 자동화',
+          description: [
+            'Copilot for Business 활용한 단순 반복작업 소요시간 90% 이상 단축',
+            'AI 도구를 활용한 개발 생산성 향상',
+          ],
+        },
+      ],
     },
   ];
 
-  const achievements = [
+  const softSkills = [
     {
-      title: '성능 최적화',
-      description: '퍼포먼스 30% 향상, Web Vitals 70→90점 달성',
-      icon: '⚡',
+      title: 'FE Team Leader',
+      items: [
+        {
+          name: '팀 리더십',
+          description: [
+            '프론트엔드 팀 리더로서 일정 관리, 코드리뷰, 기술 스택 관리 등 팀 운영 및 멘토링 경험',
+          ],
+        },
+      ],
     },
     {
-      title: '코드 품질 개선',
-      description: '코드 양 18% 감소, 테스트 커버리지 100% 달성',
-      icon: '✨',
-    },
-    {
-      title: '기술 스택 전환',
-      description: 'Vue.js에서 React로 성공적인 마이그레이션 완료',
-      icon: '🔄',
-    },
-    {
-      title: '사용자 경험 향상',
-      description: '사용자 참여도 40% 증가, 전환율 25% 향상',
-      icon: '📈',
+      title: 'Cooperation',
+      items: [
+        {
+          name: '크로스 펑셔널 협업',
+          description: [
+            '백엔드, 디자인, 기획팀과의 원활한 협업을 통한 프로젝트 성공적 완수',
+            '크로스 펑셔널 팀워크 경험',
+          ],
+        },
+      ],
     },
   ];
 
@@ -72,73 +113,24 @@ export default function About() {
           </AnimatedSection>
 
           {/* 기술스택 섹션 */}
-          <div className="space-y-8">
-            <AnimatedSection animation="fade-up" delay={400}>
-              <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
-                기술스택
-              </h3>
-            </AnimatedSection>
+          <div className="space-y-12">
+            {/* Hard Skills */}
+            <SkillSection
+              title="Hard Skills"
+              skills={hardSkills}
+              colorTheme="blue"
+              gridCols="lg:grid-cols-3"
+              baseDelay={400}
+            />
 
-            <div className="grid gap-6 md:grid-cols-2">
-              {techStacks.map((tech, index) => (
-                <AnimatedSection
-                  key={index}
-                  animation="fade-up"
-                  delay={index * 100 + 500}
-                >
-                  <Card className="border-2 border-gray-200 hover:border-blue-300 transition-colors duration-300 h-full">
-                    <CardContent className="p-6">
-                      <div className="flex items-start gap-4">
-                        {/* Content */}
-                        <div className="flex-1">
-                          <h4 className="text-xl font-semibold text-gray-800 mb-2">
-                            {tech.title}
-                          </h4>
-                          <p className="text-gray-600 text-base leading-relaxed">
-                            {tech.description}
-                          </p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </AnimatedSection>
-              ))}
-            </div>
-          </div>
-
-          {/* 주요 성과 섹션 */}
-          <div className="space-y-8">
-            <AnimatedSection animation="fade-up" delay={800}>
-              <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
-                주요 성과
-              </h3>
-            </AnimatedSection>
-
-            <div className="grid gap-6 md:grid-cols-2">
-              {achievements.map((achievement, index) => (
-                <AnimatedSection
-                  key={index}
-                  animation="fade-up"
-                  delay={index * 100 + 900}
-                >
-                  <Card className="border-2 border-gray-200 hover:border-green-300 transition-colors duration-300 h-full">
-                    <CardContent className="p-6">
-                      <div className="flex items-start gap-4">
-                        {/* Content */}
-                        <div className="flex-1">
-                          <h4 className="text-xl font-semibold text-gray-800 mb-2">
-                            {achievement.title}
-                          </h4>
-                          <p className="text-gray-600 text-base leading-relaxed">
-                            {achievement.description}
-                          </p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </AnimatedSection>
-              ))}
-            </div>
+            {/* Soft Skills */}
+            <SkillSection
+              title="Soft Skills"
+              skills={softSkills}
+              colorTheme="green"
+              gridCols="lg:grid-cols-3"
+              baseDelay={800}
+            />
           </div>
         </div>
       </div>
